@@ -1,6 +1,3 @@
-# Unit 3, Recitation
-
-# Video 2
 
 # Read in data
 polling = read.csv("PollingData.csv")
@@ -23,9 +20,6 @@ polling$SurveyUSA = imputed$SurveyUSA
 summary(polling)
 
 
-
-# Video 3
-
 # Subset data into training set and test set
 Train = subset(polling, Year == 2004 | Year == 2008)
 Test = subset(polling, Year == 2012)
@@ -38,9 +32,6 @@ sign(0)
 table(sign(Train$Rasmussen))
 table(Train$Republican, sign(Train$Rasmussen))
 
-
-
-# Video 4
 
 # Multicollinearity
 cor(Train)
@@ -61,9 +52,6 @@ pred2 = predict(mod2, type="response")
 table(Train$Republican, pred2 >= 0.5)
 summary(mod2)
 
-
-
-# Video 5
 
 # Smart baseline accuracy
 table(Test$Republican, sign(Test$Rasmussen))
